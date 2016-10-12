@@ -1,12 +1,7 @@
-// skeleton C++ file, you will need to edit this and other files to implement your enigma machine
-#include <stdexcept>
-#include <iostream>
-#include <fstream>
-
-using namespace std;
+#include "includes.hpp"
 
 int main(int argc, char **argv)
 {
-  cout << "TODO: implement an Enigma machine" << endl;
-  return 0;
+    std::cout << "TODO: implement an Enigma machine" << std::endl;
+    return 0;
 }

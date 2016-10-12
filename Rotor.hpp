@@ -1,0 +1,13 @@
+#ifndef __ROTOR_HPP
+#define __ROTOR_HPP
+
+class Rotor : public Encryptor {
+    int times_rotated;
+    vector<int> char_wire;
+public:
+    Rotor();
+    virtual char map(char c);
+    bool turn_next();
+};
+
+#endif
