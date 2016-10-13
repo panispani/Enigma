@@ -2,7 +2,10 @@
 #define __ROTOR_HPP
 
 class Rotor : public Encryptor {
-    int times_rotated;
+    /*
+     * Times rotated each rotor
+     */
+    vector<int> times_rotated;
     vector<int> char_wire;
 public:
     Rotor();

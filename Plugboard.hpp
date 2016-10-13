@@ -7,6 +7,7 @@ public:
     Plugboard();
     void connect(int i, int j);
     virtual char map(char c);
+    void setup(string plugsetup);
 };
 
 #endif

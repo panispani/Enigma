@@ -1,5 +1,6 @@
 #include "includes.hpp"
 
 char Reflector::map(char c) {
-    return 0;
+    int index = c - 'A';
+    return (index + 13) % 26 + 'A';
 }

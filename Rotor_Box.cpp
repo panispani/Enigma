@@ -2,7 +2,7 @@
 
 Rotor_Box::Rotor_Box() {}
 
-void Rotor_Box::setup(stringstream rotor_setup) {}
+void Rotor_Box::setup(list<string> rotorlist) {}
 
 char Rotor_Box::map(char c) {
     return 0;

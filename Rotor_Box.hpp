@@ -6,7 +6,7 @@ class Rotor_Box : public Encryptor {
     Reflector reflector;
 public:
     Rotor_Box();
-    void setup(stringstream rotor_setup);
+    void setup(list<string> rotorlist);
     virtual char map(char c);
 };
 
