@@ -1,4 +1,9 @@
 #include "includes.hpp"
+#include "Plugboard.cpp"
+#include "Rotor.cpp"
+#include "Reflector.cpp"
+#include "Rotor_Box.cpp"
+#include "Enigma.cpp"
 
 int main(int argc, char **argv)
 {

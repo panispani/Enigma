@@ -23,14 +23,9 @@ using namespace std;
  */
 #include "Encryptor.hpp"
 #include "Plugboard.hpp"
-#include "Plugboard.cpp"
 #include "Rotor.hpp"
-#include "Rotor.cpp"
 #include "Reflector.hpp"
-#include "Reflector.cpp"
 #include "Rotor_Box.hpp"
-#include "Rotor_Box.cpp"
 #include "Enigma.hpp"
-#include "Enigma.cpp"
 
 #endif
