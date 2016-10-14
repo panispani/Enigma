@@ -10,7 +10,7 @@ class Enigma {
     void encrypt();
     void output();
 public:
-    Enigma(list<string> rotorlist, string plugboard);
+    Enigma(list<string> rotorfiles, string plugfile);
     void setup();
     void operate();
 };

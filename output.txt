@@ -1,0 +1,8 @@
+ASDAS
+ASDAS
+4
+rotors/II.rot
+a
+rotors/III.rot
+a
+g

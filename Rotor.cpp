@@ -1,16 +1,14 @@
 #include "includes.hpp"
 
-Rotor::Rotor() {}
+Rotor::Rotor():times_rotated(0) {}
 
 char Rotor::map(char c) {
-    return char_wire[(c - 'A' + times_rotated[c - 'A']) % 26];
+    return char_wire[(c - 'A' + times_rotated) % 26];
 }
 
 bool Rotor::turn_next() {
-    int index = 0;
-    while (times_rotated[index] == 26) {
-    }
-    return false;
+    times_rotated = (times_rotated + 1) % 26;
+    return times_rotated == 26;
 }
 
 // magic numbers

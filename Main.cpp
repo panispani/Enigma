@@ -9,15 +9,14 @@ int main(int argc, char **argv)
 {
     // MAYBE EXPORT IN A FUNCTION
     assert(argc >= 2);
-    int num_rotors = argc - 2;
-    list<string> rotorlist;
+    list<string> rotorfiles;
     for (int  i = 1; i < argc - 1; i++) {
-        rotorlist.push_back(argv[i]);
+        rotorfiles.push_back(argv[i]);
     }
-    string plugsetup = argv[argc - 1];
+    string plugfile = argv[argc - 1];
     // MAYBE EXPORT IN A FUNCTION
 
-    Enigma enigma(rotorlist, plugsetup);
+    Enigma enigma(rotorfiles, plugfile);
     enigma.setup(); //erase later, think of common fucntion
     enigma.operate();
     cout << "all hail the lord" << endl;

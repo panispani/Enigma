@@ -5,7 +5,7 @@ class Rotor : public Encryptor {
     /*
      * Times rotated each rotor
      */
-    vector<int> times_rotated;
+    int times_rotated;
     vector<int> char_wire;
 public:
     Rotor();

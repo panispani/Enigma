@@ -23,7 +23,11 @@ char Rotor_Box::map(char c) {
             ++it) {
         c = it->map(c);
     }
-    // turn_next
-
+    bool turn_next = true;
+    for (list<Rotor>::iterator it = rotors.begin();
+            it != rotors.end() && turn_next;
+            ++it) {
+        turn_next = it->turn_next();
+    }
     return c;
 }

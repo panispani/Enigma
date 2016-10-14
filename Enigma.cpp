@@ -1,9 +1,12 @@
 #include "includes.hpp"
 
 // move to setup
-Enigma::Enigma(list<string> rotorlist, string plugsetup) {
-    plugboard.setup(plugsetup);
-    rotor_box.setup(rotorlist);
+Enigma::Enigma(list<string> rotorfiles, string plugfile) {
+    cout << -1 << endl;
+    plugboard.setup(plugfile);
+    cout << 0 << endl;
+    rotor_box.setup(rotorfiles);
+    cout << 0.0 << endl;
 }
 
 void Enigma::setup() {

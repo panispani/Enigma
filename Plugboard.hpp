@@ -7,7 +7,7 @@ class Plugboard : public Encryptor {
 public:
     Plugboard();
     virtual char map(char c);
-    void setup(string plugsetup);
+    void setup(string plugfile);
 };
 
 #endif
