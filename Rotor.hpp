@@ -9,6 +9,7 @@ class Rotor : public Encryptor {
     vector<int> char_wire;
 public:
     Rotor();
+    void setup(string rotorfile);
     virtual char map(char c);
     bool turn_next();
 };

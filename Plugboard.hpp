@@ -3,9 +3,9 @@
 
 class Plugboard : public Encryptor {
     vector<int> char_wire;
+    void connect(int i, int j);
 public:
     Plugboard();
-    void connect(int i, int j);
     virtual char map(char c);
     void setup(string plugsetup);
 };

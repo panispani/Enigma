@@ -1,5 +1,6 @@
 #include "includes.hpp"
 
+// move to setup
 Enigma::Enigma(list<string> rotorlist, string plugsetup) {
     plugboard.setup(plugsetup);
     rotor_box.setup(rotorlist);
