@@ -26,6 +26,7 @@ void Enigma::encrypt() {
 void Enigma::input() {
     string word;
     while (cin >> word) {
+        cout << word << endl;
         in << word;
     }
 }

@@ -18,7 +18,7 @@ void Rotor::setup(string rotorfile) {
     ifstream fin(rotorfile.c_str());
     int pos;
     for (int i = 0; i < 26; i++) {
-        cin >> pos;
+        fin >> pos;
         char_wire[i] = pos;
     }
 }
