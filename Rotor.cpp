@@ -1,6 +1,8 @@
 #include "includes.hpp"
 
-Rotor::Rotor():times_rotated(0) {}
+Rotor::Rotor():times_rotated(0) {
+    char_wire.resize(26);
+}
 
 char Rotor::map(char c) {
     return char_wire[(c - 'A' + times_rotated) % 26];

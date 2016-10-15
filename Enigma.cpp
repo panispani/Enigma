@@ -2,11 +2,8 @@
 
 // move to setup
 Enigma::Enigma(list<string> rotorfiles, string plugfile) {
-    cout << -1 << endl;
     plugboard.setup(plugfile);
-    cout << 0 << endl;
     rotor_box.setup(rotorfiles);
-    cout << 0.0 << endl;
 }
 
 void Enigma::setup() {

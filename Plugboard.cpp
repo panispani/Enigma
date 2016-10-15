@@ -1,6 +1,8 @@
 #include "includes.hpp"
 
-Plugboard::Plugboard() {}
+Plugboard::Plugboard() {
+    char_wire.resize(26);
+}
 
 // erase
 void Plugboard::connect(int i, int j) {}
