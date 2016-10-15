@@ -19,18 +19,19 @@ void Enigma::encrypt() {
     char ch;
     while (in >> ch) {
         ch = plugboard.map(ch);
-        out << rotor_box.map(ch);
+        ch = rotor_box.map(ch);
+        out << ch;
     }
 }
 
 void Enigma::input() {
     string word;
     while (cin >> word) {
-        cout << word << endl;
+        // cosider reading whitespace or in << word << " ";
         in << word;
     }
 }
 
 void Enigma::output() {
-    cout << out.str();
+    cout << out.str() << endl;
 }

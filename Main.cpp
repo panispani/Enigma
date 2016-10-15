@@ -15,9 +15,9 @@ int main(int argc, char **argv)
     }
     string plugfile = argv[argc - 1];
     // MAYBE EXPORT IN A FUNCTION
+
     Enigma enigma(rotorfiles, plugfile);
     enigma.setup(); //erase later, think of common fucntion
     enigma.operate();
-    cout << "all hail the lord" << endl;
     return 0;
 }

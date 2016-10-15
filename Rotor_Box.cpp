@@ -21,7 +21,7 @@ char Rotor_Box::map(char c) {
     for (list<Rotor>::reverse_iterator it = rotors.rbegin();
             it != rotors.rend();
             ++it) {
-        c = it->map(c);
+        c = it->rmap(c);
     }
     bool turn_next = true;
     for (list<Rotor>::iterator it = rotors.begin();

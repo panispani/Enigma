@@ -7,10 +7,12 @@ class Rotor : public Encryptor {
      */
     int times_rotated;
     vector<int> char_wire;
+    vector<int> wire_char;
 public:
     Rotor();
     void setup(string rotorfile);
     virtual char map(char c);
+    char rmap(char c);
     bool turn_next();
 };
 

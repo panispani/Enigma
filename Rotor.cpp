@@ -2,10 +2,15 @@
 
 Rotor::Rotor():times_rotated(0) {
     char_wire.resize(26);
+    wire_char.resize(26);
+}
+
+char Rotor::rmap(char c) {
+    return wire_char[(c - 'A' - times_rotated + 26) % 26] + 'A';
 }
 
 char Rotor::map(char c) {
-    return char_wire[(c - 'A' + times_rotated) % 26];
+    return char_wire[(c - 'A' + times_rotated) % 26] + 'A';
 }
 
 bool Rotor::turn_next() {
@@ -20,5 +25,6 @@ void Rotor::setup(string rotorfile) {
     for (int i = 0; i < 26; i++) {
         fin >> pos;
         char_wire[i] = pos;
+        wire_char[pos] = i;
     }
 }

@@ -2,13 +2,16 @@
 
 Plugboard::Plugboard() {
     char_wire.resize(26);
+    for (int i = 0; i < 26; i++) {
+        char_wire[i] = i;
+    }
 }
 
 // erase
 void Plugboard::connect(int i, int j) {}
 
 char Plugboard::map(char c) {
-    return char_wire[c - 'A'];
+    return char_wire[c - 'A'] + 'A';
 }
 
 // correct arguments
