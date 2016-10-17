@@ -32,8 +32,8 @@ using namespace std;
 /*
  * Useful macros
  */
-#define CHECKFILE(f)\
-    if (f.bad()) {\
+#define CHECKFILE(fin)\
+    if (!fin) {\
         cout << "Error: file not found" << endl;\
         exit(EXIT_FAILURE);\
     }
