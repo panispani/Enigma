@@ -20,6 +20,7 @@ void Enigma::encrypt() {
     while (in >> ch) {
         ch = plugboard.map(ch);
         ch = rotor_box.map(ch);
+        ch = plugboard.map(ch);
         out << ch;
     }
 }
