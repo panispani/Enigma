@@ -1,22 +1,19 @@
 #include "includes.hpp"
 
 Plugboard::Plugboard() {
-    char_wire.resize(26);
-    for (int i = 0; i < 26; i++) {
+    char_wire.resize(ALPHABET_SIZE);
+    for (int i = 0; i < ALPHABET_SIZE; i++) {
         char_wire[i] = i;
     }
 }
 
-// erase
-void Plugboard::connect(int i, int j) {}
-
 char Plugboard::map(char c) {
-    return char_wire[c - 'A'] + 'A';
+    return TOCHAR(char_wire[TOINT(c)]);
 }
 
-// correct arguments
 void Plugboard::setup(string plugfile) {
     ifstream fin(plugfile.c_str());
+    CHECKFILE(fin);
     int plugA;
     int plugB;
     while (fin >> plugA) {

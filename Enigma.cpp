@@ -18,6 +18,7 @@ void Enigma::operate() {
 void Enigma::encrypt() {
     char ch;
     while (in >> ch) {
+        CHECKCHAR(ch);
         ch = plugboard.map(ch);
         ch = rotor_box.map(ch);
         ch = plugboard.map(ch);
@@ -27,8 +28,8 @@ void Enigma::encrypt() {
 
 void Enigma::input() {
     string word;
+    cin >> skipws; //is this needed
     while (cin >> word) {
-        // cosider reading whitespace or in << word << " ";
         in << word;
     }
 }

@@ -29,4 +29,26 @@ using namespace std;
 #include "Rotor_Box.hpp"
 #include "Enigma.hpp"
 
+/*
+ * Useful macros
+ */
+#define CHECKFILE(f)\
+    if (f.bad()) {\
+        cout << "Error: file not found" << endl;\
+        exit(EXIT_FAILURE);\
+    }
+
+#define CHECKCHAR(ch)\
+    if (ch < 'A' || ch > 'Z') {\
+        cout << "Error: Invalid character" << endl;\
+        exit(EXIT_FAILURE);\
+    }
+
+#define ALPHABET_SIZE 26
+#define TOINT(ch) (ch - 'A')
+#define TOCHAR(n)\
+    ((n + ALPHABET_SIZE) % ALPHABET_SIZE + 'A')
+#define ROTATE(n, rot)\
+    ((n + rot + ALPHABET_SIZE) % ALPHABET_SIZE)
+
 #endif
