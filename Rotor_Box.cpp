@@ -4,6 +4,7 @@ Rotor_Box::Rotor_Box() {}
 
 // argument correction
 void Rotor_Box::setup(list<string> rotorfiles) {
+    rotors.clear();
     for (string rotorfile: rotorfiles) {
         Rotor rotor;
         rotor.setup(rotorfile);

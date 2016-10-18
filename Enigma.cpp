@@ -1,12 +1,8 @@
 #include "includes.hpp"
 
-// move to setup
-Enigma::Enigma(list<string> rotorfiles, string plugfile) {
+void Enigma::setup(list<string> rotorfiles, string plugfile) {
     plugboard.setup(plugfile);
     rotor_box.setup(rotorfiles);
-}
-
-void Enigma::setup() {
 }
 
 void Enigma::operate() {

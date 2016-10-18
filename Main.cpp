@@ -5,19 +5,21 @@
 #include "Rotor_Box.cpp"
 #include "Enigma.cpp"
 
+void read_args(int argc, char **argv, list<string> &rfiles, string &pfile) {
+    assert(argc >= 2);
+    for (int  i = 1; i < argc - 1; i++) {
+        rfiles.push_back(argv[i]);
+    }
+    pfile = argv[argc - 1];
+}
 int main(int argc, char **argv)
 {
-    // MAYBE EXPORT IN A FUNCTION
-    assert(argc >= 2);
     list<string> rotorfiles;
-    for (int  i = 1; i < argc - 1; i++) {
-        rotorfiles.push_back(argv[i]);
-    }
-    string plugfile = argv[argc - 1];
-    // MAYBE EXPORT IN A FUNCTION
+    string plugfile;
+    read_args(argc, argv, rotorfiles, plugfile);
 
-    Enigma enigma(rotorfiles, plugfile);
-    enigma.setup(); //erase later, think of common fucntion
+    Enigma enigma;
+    enigma.setup(rotorfiles, plugfile);
     enigma.operate();
     return 0;
 }
