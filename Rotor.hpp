@@ -7,8 +7,8 @@ class Rotor : public Encryptor {
      */
     bool rev_map;
     int times_rotated;
-    vector<int> char_wire;
-    vector<int> wire_char;
+    vector<int> wire_to;
+    vector<int> wire_from;
 public:
     Rotor();
     void setup(string rotorfile);
