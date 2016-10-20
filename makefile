@@ -1,12 +1,28 @@
-# edit this makefile so that running make compiles your enigma program
+CXX=g++
+CXXFLAGS=-std=c++11
 
-enigma: Main.o
-	g++ -o enigma Main.o
+SOURCE=Main.cpp \
+       Enigma.cpp \
+	   Rotor_Box.cpp \
+       IOmodule.cpp \
+       Rotor.cpp \
+       Plugboard.cpp \
+       Reflector.cpp \
 
-Main.o: Main.cpp
-	g++ -std=c++11 -c Main.cpp
+OBJS=$(SOURCE:.cpp=.o)
+
+enigma: $(OBJS)
+	g++ -o enigma $^
+
+depend: .depend
+
+.depend: $(SOURCE)
+	rm -f ./.depend
+	$(CXX) $(CXXFLAGS) -MM $^ -MF  ./.depend;
+
+include .depend
 
 clean:
-	rm -rf enigma *.o
+	$(RM) enigma *.o ./.depend
 
 .PHONY: clean
