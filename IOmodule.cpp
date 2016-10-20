@@ -44,6 +44,7 @@ void IOmodule::setup_rotorbox(unique_ptr<Rotor_Box>& rotorbox) {
 bool IOmodule::input(char &ch) {
     cin >> skipws;
     // eof  CORRECT
+    return (bool)(cin >> ch);
     if (cin >> ch) {
         return true;
     }

@@ -23,14 +23,3 @@ void Rotor::connect(int from, int to) {
     wire_to[to] = from;
     wire_from[from] = to;
 }
-
-/*void Rotor::setup(string rotorfile) {
-    ifstream fin(rotorfile.c_str());
-    CHECKFILE(fin);
-    int pos;
-    for (int i = 0; i < ALPHABET_SIZE; i++) {
-        fin >> pos;
-        wire_to[i] = pos;
-        wire_from[pos] = i;
-    }
-}*/

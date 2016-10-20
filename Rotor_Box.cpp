@@ -1,18 +1,5 @@
 #include "includes.hpp"
 
-Rotor_Box::Rotor_Box() {}
-
-// argument correction
-/*void Rotor_Box::setup(list<string> rotorfiles) {
-    rotors.clear();
-    for (string rotorfile: rotorfiles) {
-        Rotor rotor;
-        rotor.setup(rotorfile);
-        rotors.push_back(rotor);
-    }
-}
-*/
-
 void Rotor_Box::add(Rotor rotor) {
     rotors.push_back(rotor);
 }
