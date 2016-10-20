@@ -1,8 +1,12 @@
 #include "includes.hpp"
 
+Enigma::Enigma() {
+    plugboard = move(unique_ptr<Plugboard>(new Plugboard));
+    rotorbox = move(unique_ptr<Rotor_Box>(new Rotor_Box));
+}
 void Enigma::setup(list<string> rotorfiles, string plugfile) {
-    plugboard.setup(plugfile);
-    rotor_box.setup(rotorfiles);
+    plugboard->setup(plugfile);
+    rotorbox->setup(rotorfiles);
 }
 
 void Enigma::operate() {
@@ -15,9 +19,9 @@ void Enigma::encrypt() {
     char ch;
     while (in >> ch) {
         CHECKCHAR(ch);
-        ch = plugboard.map(ch);
-        ch = rotor_box.map(ch);
-        ch = plugboard.map(ch);
+        ch = plugboard->map(ch);
+        ch = rotorbox->map(ch);
+        ch = plugboard->map(ch);
         out << ch;
     }
 }

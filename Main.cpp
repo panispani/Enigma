@@ -12,14 +12,15 @@ void read_args(int argc, char **argv, list<string> &rfiles, string &pfile) {
     }
     pfile = argv[argc - 1];
 }
+
 int main(int argc, char **argv)
 {
     list<string> rotorfiles;
     string plugfile;
     read_args(argc, argv, rotorfiles, plugfile);
 
-    Enigma enigma;
-    enigma.setup(rotorfiles, plugfile);
-    enigma.operate();
+    unique_ptr<Enigma> enigma(new Enigma);
+    enigma->setup(rotorfiles, plugfile);
+    enigma->operate();
     return 0;
 }
