@@ -7,7 +7,15 @@ class Enigma {
     unique_ptr<IOmodule> iomodule;
 public:
     Enigma();
+    /*
+     * Setup the IOmodule which in turn will
+     * setup the plugboard and the rotor box
+     */
     void setup(int argc, char **argv);
+    /*
+     * Launch Enigma machine
+     * Read input and encrypt it
+     */
     void operate();
 };
 

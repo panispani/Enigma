@@ -5,6 +5,9 @@
 
 class Reflector : public Encryptor {
 public:
+    /*
+     * Map input character to another one
+     */
     virtual char map(char c);
 };
 

@@ -1,0 +1,3 @@
+Reflector.o: Reflector.cpp includes.hpp Configurable.hpp Encryptor.hpp \
+ Plugboard.hpp Rotor.hpp Reflector.hpp Rotor_Box.hpp IOmodule.hpp \
+ Enigma.hpp
