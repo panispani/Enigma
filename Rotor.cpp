@@ -19,7 +19,12 @@ bool Rotor::turn_next() {
     return times_rotated == 0;
 }
 
-void Rotor::setup(string rotorfile) {
+void Rotor::connect(int from, int to) {
+    wire_to[to] = from;
+    wire_from[from] = to;
+}
+
+/*void Rotor::setup(string rotorfile) {
     ifstream fin(rotorfile.c_str());
     CHECKFILE(fin);
     int pos;
@@ -28,4 +33,4 @@ void Rotor::setup(string rotorfile) {
         wire_to[i] = pos;
         wire_from[pos] = i;
     }
-}
+}*/

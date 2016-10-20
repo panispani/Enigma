@@ -1,7 +1,7 @@
 #ifndef __ROTOR_HPP
 #define __ROTOR_HPP
 
-class Rotor : public Encryptor {
+class Rotor : public Encryptor, public Configurable {
     /*
      * Times rotated each rotor
      */
@@ -11,8 +11,8 @@ class Rotor : public Encryptor {
     vector<int> wire_from;
 public:
     Rotor();
-    void setup(string rotorfile);
     virtual char map(char c);
+    virtual void connect(int from, int to);
     bool turn_next();
 };
 

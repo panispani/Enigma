@@ -4,14 +4,10 @@
 class Enigma {
     unique_ptr<Plugboard> plugboard;
     unique_ptr<Rotor_Box> rotorbox;
-    stringstream in;
-    stringstream out;
-    void input();
-    void encrypt();
-    void output();
+    unique_ptr<IOmodule> iomodule;
 public:
     Enigma();
-    void setup(list<string> rotorfiles, string plugfile);
+    void setup(int argc, char **argv);
     void operate();
 };
 

@@ -23,11 +23,13 @@ using namespace std;
 /*
  * Header files
  */
+#include "Configurable.hpp"
 #include "Encryptor.hpp"
 #include "Plugboard.hpp"
 #include "Rotor.hpp"
 #include "Reflector.hpp"
 #include "Rotor_Box.hpp"
+#include "IOmodule.hpp"
 #include "Enigma.hpp"
 
 /*

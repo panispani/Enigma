@@ -4,6 +4,7 @@
 #include "Reflector.cpp"
 #include "Rotor_Box.cpp"
 #include "Enigma.cpp"
+#include "IOmodule.cpp"
 
 void read_args(int argc, char **argv, list<string> &rfiles, string &pfile) {
     assert(argc >= 2);
@@ -15,12 +16,12 @@ void read_args(int argc, char **argv, list<string> &rfiles, string &pfile) {
 
 int main(int argc, char **argv)
 {
-    list<string> rotorfiles;
-    string plugfile;
-    read_args(argc, argv, rotorfiles, plugfile);
+    //list<string> rotorfiles;
+    //string plugfile;
+    //read_args(argc, argv, rotorfiles, plugfile);
 
     unique_ptr<Enigma> enigma(new Enigma);
-    enigma->setup(rotorfiles, plugfile);
+    enigma->setup(argc, argv);
     enigma->operate();
     return 0;
 }

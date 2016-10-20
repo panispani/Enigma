@@ -8,12 +8,18 @@ char Plugboard::map(char c) {
     return TOCHAR(char_wire[TOINT(c)]);
 }
 
-void Plugboard::init_plugboard() {
+void Plugboard::reset() {
     for (int i = 0; i < ALPHABET_SIZE; i++) {
         char_wire[i] = i;
     }
 }
 
+void Plugboard::connect(int from, int to) {
+    char_wire[from] = to;
+    char_wire[to] = from;
+}
+
+/*
 void Plugboard::setup(string plugfile) {
     ifstream fin(plugfile.c_str());
     CHECKFILE(fin);
@@ -25,4 +31,4 @@ void Plugboard::setup(string plugfile) {
         char_wire[plugA] = plugB;
         char_wire[plugB] = plugA;
     }
-}
+}*/
