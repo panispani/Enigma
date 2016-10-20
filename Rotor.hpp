@@ -10,6 +10,7 @@ class Rotor : public Encryptor, public Configurable {
     vector<int> wire_to;
     vector<int> wire_from;
 public:
+    Rotor();
     virtual char map(char c);
     virtual void connect(int from, int to);
     bool turn_next();

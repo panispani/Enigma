@@ -30,12 +30,11 @@ void IOmodule::setup_rotorbox(unique_ptr<Rotor_Box>& rotorbox) {
     for (string rfile: rfiles) {
         ifstream fin(rfile.c_str());
         CHECKFILE(fin);
-        Rotor rotor;
-        //unique_ptr<Rotor> rotor = move(unique_ptr<Rotor>(new Rotor));
+        unique_ptr<Rotor> rotor = move(unique_ptr<Rotor>(new Rotor));
         int pos;
         for (int i = 0; i < ALPHABET_SIZE; i++) {
             fin >> pos;
-            rotor.connect(pos, i);
+            rotor->connect(pos, i);
         }
         rotorbox->add(rotor);
     }
@@ -43,12 +42,7 @@ void IOmodule::setup_rotorbox(unique_ptr<Rotor_Box>& rotorbox) {
 
 bool IOmodule::input(char &ch) {
     cin >> skipws;
-    // eof  CORRECT
     return (bool)(cin >> ch);
-    if (cin >> ch) {
-        return true;
-    }
-    return false;
 }
 
 void IOmodule::output(char ch) {
