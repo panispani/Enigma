@@ -6,16 +6,18 @@
 
 void IOmodule::setup(int argc, char **argv) {
     assert(argc >= MIN_ARGS);
+    unique_ptr<string> rfile;
     for (int  i = FIRST_ROTOR_ARG;
               i <= LAST_ROTOR_ARG;
               i++) {
-        rfiles.push_back(argv[i]);
+        rfile.reset(new string(argv[i]));
+        rfiles.push_back(move(rfile));
     }
-    pfile = argv[PLUGBOARD_ARG];
+    pfile.reset(new string(argv[PLUGBOARD_ARG]));
 }
 
 void IOmodule::setup_plugboard(unique_ptr<Plugboard>& plugboard) {
-    ifstream fin(pfile.c_str());
+    ifstream fin(pfile->c_str());
     CHECKFILE(fin);
     int plugA;
     int plugB;
@@ -27,8 +29,10 @@ void IOmodule::setup_plugboard(unique_ptr<Plugboard>& plugboard) {
 }
 
 void IOmodule::setup_rotorbox(unique_ptr<Rotor_Box>& rotorbox) {
-    for (string rfile: rfiles) {
-        ifstream fin(rfile.c_str());
+    for (auto rfile = rfiles.begin();
+            rfile != rfiles.end();
+            ++rfile) {
+        ifstream fin((*rfile)->c_str());
         CHECKFILE(fin);
         unique_ptr<Rotor> rotor = move(unique_ptr<Rotor>(new Rotor));
         int pos;

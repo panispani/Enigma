@@ -2,8 +2,8 @@
 #define __IOMODULE_HPP
 
 class IOmodule {
-    list<string> rfiles;
-    string pfile;
+    list<unique_ptr<string>> rfiles;
+    unique_ptr<string> pfile;
 public:
     void setup(int argc, char **argv);
     void setup_plugboard(unique_ptr<Plugboard>& plugboard);
