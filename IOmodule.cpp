@@ -1,8 +1,4 @@
 #include "includes.hpp"
-#define MIN_ARGS 2
-#define FIRST_ROTOR_ARG 1
-#define LAST_ROTOR_ARG (argc - 2)
-#define PLUGBOARD_ARG (argc - 1)
 
 void IOmodule::setup(int argc, char **argv) {
     assert(argc >= MIN_ARGS);
@@ -52,5 +48,3 @@ bool IOmodule::input(char &ch) {
 void IOmodule::output(char ch) {
     cout << ch;
 }
-
-

@@ -1,6 +1,12 @@
 #ifndef __ENIGMA_HPP
 #define __ENIGMA_HPP
 
+#define CHECKCHAR(ch)\
+    if (ch < 'A' || ch > 'Z') {\
+        cout << "Error: Invalid character" << endl;\
+        exit(EXIT_FAILURE);\
+    }
+
 class Enigma {
     unique_ptr<Plugboard> plugboard;
     unique_ptr<Rotor_Box> rotorbox;
@@ -14,7 +20,7 @@ public:
     void setup(int argc, char **argv);
     /*
      * Launch Enigma machine
-     * Read input and encrypt it
+     * Read input, encrypt it and output it
      */
     void operate();
 };

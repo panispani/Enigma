@@ -6,15 +6,9 @@
  */
 #include <iostream>
 #include <fstream>
-#include <stdexcept>
 #include <list>
-#include <vector>
-#include <cstdlib>
 #include <string>
-#include <sstream>
-#include <queue>
-#include <stack>
-#include <algorithm>
+#include <vector>
 #include <cassert>
 #include <memory>
 
@@ -35,18 +29,6 @@ using namespace std;
 /*
  * Useful macros
  */
-#define CHECKFILE(fin)\
-    if (!fin) {\
-        cout << "Error: file not found" << endl;\
-        exit(EXIT_FAILURE);\
-    }
-
-#define CHECKCHAR(ch)\
-    if (ch < 'A' || ch > 'Z') {\
-        cout << "Error: Invalid character" << endl;\
-        exit(EXIT_FAILURE);\
-    }
-
 #define ALPHABET_SIZE 26
 #define TOINT(ch) (ch - 'A')
 #define TOCHAR(n)\
