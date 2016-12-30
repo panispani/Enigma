@@ -45,10 +45,10 @@ For example the file plugboard/I.pb contains:
 ```
 25 10 22 9 21 4
 ```
-which corresponds to:
-'Z'(25) is connected to 'K'(10)
-'W'(22) is connected to 'J'(9)
-'V'(21) is connected to 'E'(4)
+which corresponds to:  
+'Z'(25) is connected to 'K'(10)  
+'W'(22) is connected to 'J'(9)  
+'V'(21) is connected to 'E'(4)  
 All other letters are mapped to themselves
 
 ## Sample Configuration Files and A Small Testsuite
